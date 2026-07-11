@@ -19,6 +19,7 @@ jobs:
     uses: U-Bhatti/github-actions/.github/workflows/build-android-apk.yml@main
     with:
       java-version: "17"
+      project-directory: "."
       gradle-task: ":app:assembleDebug"
       apk-path: "app/build/outputs/apk/debug/*.apk"
       artifact-name: "app-debug-apk"

@@ -1,0 +1,25 @@
+name: Build Android APK
+
+on:
+  workflow_dispatch:
+
+  push:
+    branches:
+      - main
+
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    uses: U-Bhatti/github-actions/.github/workflows/build-android-apk.yml@v1
+    with:
+      java-version: "17"
+      gradle-task: ":app:assembleDebug"
+      apk-path: "app/build/outputs/apk/debug/*.apk"
+      artifact-name: "app-debug-apk"
+      retention-days: 14

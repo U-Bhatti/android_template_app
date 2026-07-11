@@ -16,7 +16,7 @@ permissions:
 
 jobs:
   build:
-    uses: U-Bhatti/github-actions/.github/workflows/build-android-apk.yml@v1
+    uses: U-Bhatti/github-actions/.github/workflows/build-android-apk.yml@main
     with:
       java-version: "17"
       gradle-task: ":app:assembleDebug"
